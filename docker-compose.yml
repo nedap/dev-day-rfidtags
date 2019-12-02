@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nedap/rfidtags-jupyter
+    volumes:
+      - ./:/home/jovyan/work
+    ports:
+      - 8888:8888
+    restart: always
+    user: root
+    # ensure that these environment variables are being properly resolved
+    command: start-notebook.sh --NotebookApp.token="devday" --NotebookApp.disable_check_xsrf=True
