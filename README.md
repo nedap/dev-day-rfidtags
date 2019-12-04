@@ -1,4 +1,4 @@
-# DevDay 2019 - Retail RFDI Label Scanning
+# DevDay 2019 - Retail RFID Label Scanning
 
 ## Environment
 
