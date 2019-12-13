@@ -1,8 +1,13 @@
+from os.path import join, splitext
+
 from sklearn.metrics import confusion_matrix
 from sklearn.utils.multiclass import unique_labels
 
 import numpy as np
 import matplotlib.pyplot as plt
+
+import pandas as pd
+import glob
 
 
 
@@ -53,3 +58,31 @@ def plot_confusion_matrix(y_true, y_pred, classes,
                     color="white" if cm[i, j] > thresh else "black")
     fig.tight_layout()
     return ax
+
+
+def load_clean_epc_codes():
+    clean_epcs = set()
+
+    for labelset in glob.glob('../data/labelset*/samples_labels/'):
+        labelset_readings = glob.glob(join(labelset, '*.csv'))
+        labelset_epcs = (set(pd.read_csv(csv)['epc']) for csv in labelset_readings)
+        clean_epcs.update(set.intersection(*labelset_epcs))
+        
+    return clean_epcs
+
+
+def load_samples():
+    all_samples = []
+
+    for sample_csv in glob.glob('../data/labelset*/samples_location*/*.csv'):
+        _, _, labelset_id, location_id, sample_id = sample_csv.split('/')
+        sample_id = splitext(sample_id)[0]
+
+        df_location = pd.read_csv(sample_csv)
+        df_location['labelset_id'] = labelset_id
+        df_location['location_id'] = location_id
+        df_location['sample_id'] = sample_id
+        all_samples.append(df_location)
+
+    df_samples = pd.concat(all_samples, sort=True)
+    return df_samples

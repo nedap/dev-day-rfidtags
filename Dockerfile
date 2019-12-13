@@ -21,4 +21,3 @@ RUN conda install -c conda-forge jupyter_contrib_nbextensions \
     && jupyter nbextension enable nbextensions_configurator/config_menu/main \
     && jupyter nbextension enable hide_input_all/main \
     && jupyter nbextension enable toc2/main \
-    && jupyter nbextension enable code_prettify/autopep8
