@@ -23,7 +23,7 @@ git clone https://github.com/nedap/dev-day-rfidtags.git
 
 Afterwards, we will setup the environment.
 
-### Environment Anaconda
+### Anaconda
 Download anaconda here: [installation instructions](https://www.anaconda.com/distribution/#download-section). Afterwards, run the following commands in the root of this repository.
 
 ```sh
@@ -38,7 +38,7 @@ jupyter notebook
 
 Jupyter should automatically open a page in your browser.
 
-### Environment Docker
+### Docker
 
 Make sure you have docker installed: [installation instructions](https://docs.docker.com/v17.09/engine/installation/#supported-platforms).
 
