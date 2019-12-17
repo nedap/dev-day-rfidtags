@@ -38,7 +38,7 @@ conda env update -f environment.yml
 conda activate rfidtags
 
 pip install --quiet ipykernel autopep8
-python -m ipykernel install --user --name rfidtags --display-name \"Python (rfidtags)\"
+python -m ipykernel install --user --name rfidtags --display-name "Python (rfidtags)"
 
 jupyter notebook
 ```
