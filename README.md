@@ -21,10 +21,17 @@ First, you can clone this repository to a location of your choice:
 git clone https://github.com/nedap/dev-day-rfidtags.git
 ```
 
+If you don't have git installed, you can also download the repository [here](https://github.com/nedap/dev-day-rfidtags/archive/master.zip).
+
 Afterwards, we will setup the environment.
 
-### Anaconda
-Download anaconda here: [installation instructions](https://www.anaconda.com/distribution/#download-section). Afterwards, run the following commands in the root of this repository.
+### Option 1: Anaconda
+
+Download anaconda here: [installation instructions](https://www.anaconda.com/distribution/#download-section).
+
+#### Linux/macOS
+
+Afterwards, run the following commands in the root of this repository.
 
 ```sh
 conda env update -f environment.yml
@@ -38,7 +45,13 @@ jupyter notebook
 
 Jupyter should automatically open a page in your browser.
 
-### Docker
+#### Windows
+
+Open the Anaconda Navigator. Then, create a new virtual environment called `rfidtags` by importing the `environment.yml` in this repository.
+
+Once this is done, select that environment and launch Jupyter.
+
+### Option 2: Docker
 
 Make sure you have docker installed: [installation instructions](https://docs.docker.com/v17.09/engine/installation/#supported-platforms).
 
